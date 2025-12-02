@@ -422,7 +422,7 @@ PrefabInstance:
       addedObject: {fileID: 340636325}
     - targetCorrespondingSourceObject: {fileID: 2224722379667499168, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 340636332}
+      addedObject: {fileID: 340636339}
   m_SourcePrefab: {fileID: 100100000, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
 --- !u!1 &340636316 stripped
 GameObject:
@@ -450,14 +450,14 @@ MonoBehaviour:
   - m_Rig: {fileID: 1416344541}
     m_Active: 1
   m_Effectors: []
---- !u!114 &340636332
+--- !u!114 &340636339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340636316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18c5dd5acf6bc8d4083b3cec582ab0c6, type: 3}
   m_Name: 
@@ -776,50 +776,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1033889550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1033889552}
-  - component: {fileID: 1033889551}
-  m_Layer: 0
-  m_Name: '[ Input Manager ]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1033889551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033889550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c5dd5acf6bc8d4083b3cec582ab0c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1033889552
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033889550}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21542008, y: 1.5961019, z: -2.9797215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1147175913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714590659885679771, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
@@ -1112,5 +1068,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 340636315}
-  - {fileID: 1033889552}
   - {fileID: 412044355}

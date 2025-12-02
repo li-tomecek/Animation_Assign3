@@ -5,8 +5,6 @@ public class AnimationStateController : MonoBehaviour
     Animator _animator;
 
     [Header ("Speed")]
-    //float _velocityZ = 0f;
-    //float _velocityX = 0f;
     [SerializeField] float _acceleration = 1f;
     [SerializeField] float _deceleration = 1f;
     [SerializeField] float _maxWalkSpeed = 1f;

@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     GameControls _gameControls;
 
-    public static InputManager Instance;
+    public static InputManager Instance {get; private set; }
 
     //Controls Events
     public event Action<Vector2> MoveEvent;
@@ -17,7 +17,8 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this; 
+        if (Instance == null)
+            Instance = this; 
 
         _gameControls = new GameControls();
 
