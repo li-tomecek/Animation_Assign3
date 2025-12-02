@@ -69,9 +69,6 @@ public class AnimationStateController : MonoBehaviour
         else        // -- Air Movement -- 
         {
             _animator.SetFloat("VelocityY", _rb.linearVelocity.y);
-            
-            if(_rb.linearVelocity.y < 0)
-                _animator.SetBool("IsFalling", true);
         }
         
     }
@@ -86,7 +83,8 @@ public class AnimationStateController : MonoBehaviour
 
     public void TryAttack()
     {
-
+        if(_isGrounded)
+            _animator.SetTrigger("Attack");
     }
 
 }
