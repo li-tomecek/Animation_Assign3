@@ -13,14 +13,14 @@ public class AnimationStateController : MonoBehaviour
     Rigidbody _rb;
     bool _isGrounded;
     [SerializeField] float _jumpForce = 3f;
-    [SerializeField] Transform groundCheck;
-    [SerializeField] float _roundCheckRadius = 0.3f;
+    [SerializeField] Transform _groundCheckStart;
+    [SerializeField] float _groundCheckDistance = 0.025f;
     [SerializeField] LayerMask _groundLayer;
 
     Vector2 _movementInput;
     Vector3 _velocity = new Vector3();
     bool _isSprinting;
-    float _currentMaxSpeed, _velocityNormalized;
+    float _currentMaxSpeed;
 
     private void Awake()
     {
@@ -40,7 +40,8 @@ public class AnimationStateController : MonoBehaviour
 
     private void FixedUpdate()
     {   // -- Ground Check -- 
-
+        _isGrounded = Physics.Raycast(_groundCheckStart.position, Vector3.down, _groundCheckDistance, _groundLayer);
+        _animator.SetBool("IsGrounded", _isGrounded);
 
         // -- Input -- 
         _currentMaxSpeed = _isSprinting ? _maxRunSpeed : _maxRunSpeed/2f;
@@ -56,21 +57,31 @@ public class AnimationStateController : MonoBehaviour
         _velocity.z = Mathf.Clamp(_velocity.z, -_currentMaxSpeed, _currentMaxSpeed);
         _velocity.x = Mathf.Clamp(_velocity.x, -_currentMaxSpeed, _currentMaxSpeed);
 
-
-        _animator.SetFloat("VelocityZ", _velocity.z / _maxRunSpeed);    //has to be normalized btwn 0 and 1 for the animator to be accurate
-        _animator.SetFloat("VelocityX", _velocity.x / _maxRunSpeed);
-
-
-        //Apply movement to Rigidbody
-        _velocity.y = _rb.linearVelocity.y;
-        _rb.linearVelocity = _velocity;     //Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.fixedDeltaTime);
-        
         // -- Ground Movement -- 
+        if (_isGrounded)
+        {
+            _animator.SetFloat("VelocityZ", _velocity.z / _maxRunSpeed);    //has to be normalized btwn 0 and 1 for the animator to be accurate
+            _animator.SetFloat("VelocityX", _velocity.x / _maxRunSpeed);
+
+            _velocity.y = _rb.linearVelocity.y;
+            _rb.linearVelocity = _velocity;     //Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.fixedDeltaTime);
+        } 
+        else        // -- Air Movement -- 
+        {
+            _animator.SetFloat("VelocityY", _rb.linearVelocity.y);
+            
+            if(_rb.linearVelocity.y < 0)
+                _animator.SetBool("IsFalling", true);
+        }
+        
     }
 
     public void TryJump()
     {
+        if(_isGrounded == false) return;
 
+        _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        _animator.SetTrigger("JumpTakeoff");
     }
 
     public void TryAttack()
