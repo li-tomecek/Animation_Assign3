@@ -5,10 +5,9 @@ public class AnimationStateController : MonoBehaviour
     Animator _animator;
 
     [Header ("Speed")]
-    [SerializeField] float _acceleration = 1f;
-    [SerializeField] float _deceleration = 1f;
-    [SerializeField] float _maxWalkSpeed = 1f;
-    [SerializeField] float _maxRunSpeed = 1f;
+    [SerializeField] float _acceleration = 2.5f;
+    [SerializeField] float _deceleration = 2.5f;
+    [SerializeField] float _maxRunSpeed = 5f;
 
     [Header("Jumping")]
     Rigidbody _rb;
@@ -21,6 +20,7 @@ public class AnimationStateController : MonoBehaviour
     Vector2 _movementInput;
     Vector3 _velocity = new Vector3();
     bool _isSprinting;
+    float _currentMaxSpeed, _velocityNormalized;
 
     private void Awake()
     {
@@ -43,28 +43,27 @@ public class AnimationStateController : MonoBehaviour
 
 
         // -- Input -- 
-        float currentMaxSpeed = _isSprinting ? _maxRunSpeed : _maxWalkSpeed;
-        _velocity.z += (_movementInput.y == 0) 
-            ? Mathf.MoveTowards(_velocity.z, 0f, _deceleration * Time.deltaTime) 
-            : _movementInput.y * Time.deltaTime * _acceleration;
+        _currentMaxSpeed = _isSprinting ? _maxRunSpeed : _maxRunSpeed/2f;
+        _velocity.z = (_movementInput.y == 0) 
+            ? Mathf.MoveTowards(_velocity.z, 0f, _deceleration * Time.fixedDeltaTime)   //decelerate
+            : _velocity.z + (_movementInput.y * Time.fixedDeltaTime * _acceleration);   //accelerate v = v + a*t
 
-        _velocity.x += (_movementInput.x == 0)
-            ? Mathf.MoveTowards(_velocity.x, 0f, _deceleration * Time.deltaTime)
-            : _movementInput.x * Time.deltaTime * _acceleration;
+        _velocity.x = (_movementInput.x == 0)
+            ? Mathf.MoveTowards(_velocity.x, 0f, _deceleration * Time.fixedDeltaTime)
+            : _velocity.x + (_movementInput.x * Time.fixedDeltaTime * _acceleration);
 
 
-        _velocity.z = Mathf.Clamp(_velocity.z, -currentMaxSpeed, currentMaxSpeed);
-        _velocity.x = Mathf.Clamp(_velocity.x, -currentMaxSpeed, currentMaxSpeed);
+        _velocity.z = Mathf.Clamp(_velocity.z, -_currentMaxSpeed, _currentMaxSpeed);
+        _velocity.x = Mathf.Clamp(_velocity.x, -_currentMaxSpeed, _currentMaxSpeed);
 
-        _animator.SetFloat("VelocityZ", _velocity.z);
-        _animator.SetFloat("VelocityX", _velocity.x);
+
+        _animator.SetFloat("VelocityZ", _velocity.z / _maxRunSpeed);    //has to be normalized btwn 0 and 1 for the animator to be accurate
+        _animator.SetFloat("VelocityX", _velocity.x / _maxRunSpeed);
 
 
         //Apply movement to Rigidbody
         _velocity.y = _rb.linearVelocity.y;
-        _rb.linearVelocity = Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.deltaTime);
-
-        Debug.Log(_velocity);
+        _rb.linearVelocity = _velocity;     //Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.fixedDeltaTime);
         
         // -- Ground Movement -- 
     }
