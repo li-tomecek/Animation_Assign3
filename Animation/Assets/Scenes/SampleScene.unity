@@ -366,6 +366,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
+      propertyPath: _deceleration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
       propertyPath: _feetPosition
       value: 
       objectReference: {fileID: 364039300}
@@ -753,7 +757,7 @@ GameObject:
   - component: {fileID: 1965016394}
   - component: {fileID: 1965016393}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: Follow Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,5 +860,5 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 412044355}
-  - {fileID: 340636315}
   - {fileID: 1965016395}
+  - {fileID: 340636315}

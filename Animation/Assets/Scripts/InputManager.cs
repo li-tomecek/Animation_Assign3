@@ -19,7 +19,9 @@ public class InputManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this; 
-
+        else
+            Destroy(this.gameObject);
+            
         _gameControls = new GameControls();
 
         _gameControls.Player.Enable();
