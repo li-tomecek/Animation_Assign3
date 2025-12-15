@@ -1021,8 +1021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -203655887218126122, guid: 09525c8bbeb44e249862ab1f94a55701, type: 3}
-  m_Position: {x: 4.481278, y: 3.91661, z: 20.042038}
+  m_Clip: {fileID: -203655887218126122, guid: 2cfaa21cf246ed349825a9b278fdf254, type: 3}
+  m_Position: {x: 4.481279, y: 3.9166102, z: 20.165861}
   m_EulerAngles: {x: -19.994, y: 77.192, z: 0.043}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: -203655887218126122, guid: c72d7a7e7a3c0fe49a7f92437e2b45b8, type: 3}
-  m_Position: {x: 4.239548, y: 4.039705, z: 22.433157}
+  m_Position: {x: 4.239548, y: 4.039705, z: 22.66089}
   m_EulerAngles: {x: -33.826, y: 77.18, z: 0.049}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
@@ -2009,19 +2009,37 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Crouching Idle
   - m_Version: 1
-    m_Start: 9.333333333333334
-    m_ClipIn: 0
+    m_Start: 9.533333333333333
+    m_ClipIn: 0.1999999999999993
     m_Asset: {fileID: -3623248281722127492}
-    m_Duration: 2.6999999999999993
+    m_Duration: 2.5
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5737020123991531971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.8080343490802626
+    m_BlendInDuration: 1.333333333333334
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2054,22 +2072,22 @@ MonoBehaviour:
     m_ExposedParameterNames: []
     m_AnimationCurves: {fileID: 0}
     m_Recordable: 0
-    m_PostExtrapolationMode: 1
+    m_PostExtrapolationMode: 2
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 2.9499999999999993
     m_PreExtrapolationTime: 0
-    m_DisplayName: Crouch Peek
+    m_DisplayName: wall Crouch Idle
   - m_Version: 1
     m_Start: 8.083333333333334
     m_ClipIn: 1.0475400749999992
     m_Asset: {fileID: -1459317304731295541}
-    m_Duration: 3.0580343490802626
+    m_Duration: 2.783333333333333
     m_TimeScale: 0.6083955
     m_ParentTrack: {fileID: 5737020123991531971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.8080343490802626
+    m_BlendOutDuration: 1.333333333333334
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -2096,7 +2114,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
