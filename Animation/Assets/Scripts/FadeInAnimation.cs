@@ -9,6 +9,7 @@ public class FadeInAnimation : MonoBehaviour
     
     void Start()
     {
+        gameObject.SetActive(true);
         fadeBackground.DOFade(0, fadeDuration);
     }
 

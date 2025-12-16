@@ -440,7 +440,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 83c0d34b8a8e3b1489ad2903e8afdaff, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -462,8 +462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _acceleration: 10
-  _deceleration: 3
-  _maxRunSpeed: 2
+  _deceleration: 10
+  _maxRunSpeed: 3
   _jumpForce: 6
   _groundCheckStart: {fileID: 4028338540703361796}
   _groundCheckDistance: 0.15
@@ -483,6 +483,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 763280909680837300}
+  _attackClips:
+  - {fileID: 8300000, guid: af6916b2d61bd454086b4f53360d87f2, type: 3}
+  - {fileID: 8300000, guid: 96980e33e771bef44876a5fed46bf4b6, type: 3}
+  - {fileID: 8300000, guid: 613baf7419ed4e74c8afc2b068508b71, type: 3}
+  - {fileID: 8300000, guid: 3976086ba9667ba4098be1a98084d016, type: 3}
+  _jumpClips:
+  - {fileID: 8300000, guid: cfc51998418b074418e7ddf5bbc2d3ae, type: 3}
+  - {fileID: 8300000, guid: ceece38497395954ea94a126db2b20ae, type: 3}
+  - {fileID: 8300000, guid: 7690d335d59eaa54190ba2a38991f603, type: 3}
+  - {fileID: 8300000, guid: 2d56d9357086dc24ba92bc67adac133b, type: 3}
   _clip: {fileID: 0}
 --- !u!54 &8248238550935275000
 Rigidbody:
@@ -3088,7 +3098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362529204114123462, guid: d0dc8e15ddf7e6e49abe10786af2ffc4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013100750781450934, guid: d0dc8e15ddf7e6e49abe10786af2ffc4, type: 3}
       propertyPath: m_LocalScale.x

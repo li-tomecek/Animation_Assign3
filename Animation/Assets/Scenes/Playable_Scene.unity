@@ -227,14 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Erika
       objectReference: {fileID: 0}
-    - target: {fileID: 2646949851754861186, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2646949851754861186, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4446728126158668050, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -274,14 +266,6 @@ PrefabInstance:
     - target: {fileID: 4446728126158668050, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _maxRunSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _deceleration
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2248,7 +2232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1095739279
 RectTransform:
   m_ObjectHideFlags: 0
