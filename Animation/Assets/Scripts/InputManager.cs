@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public event Action AttackEvent;
     public event Action SprintStartEvent;
     public event Action SprintReleasedEvent;
+    public event Action<Vector2> LookEvent;
 
     private void Awake()
     {
@@ -32,5 +33,8 @@ public class InputManager : MonoBehaviour
         _gameControls.Player.Attack.performed += (InputAction.CallbackContext context) => AttackEvent?.Invoke();
         _gameControls.Player.Sprint.performed += (InputAction.CallbackContext context) => SprintStartEvent?.Invoke();
         _gameControls.Player.Sprint.canceled += (InputAction.CallbackContext context) => SprintReleasedEvent?.Invoke();
+        
+        
+        _gameControls.Player.Look.performed += (InputAction.CallbackContext context) => LookEvent?.Invoke(context.ReadValue<Vector2>());
     }
 }

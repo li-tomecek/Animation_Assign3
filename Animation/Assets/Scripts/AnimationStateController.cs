@@ -17,6 +17,10 @@ public class AnimationStateController : MonoBehaviour
     [SerializeField] Transform _groundCheckStart;
     [SerializeField] float _groundCheckDistance = 0.025f;
     [SerializeField] LayerMask _groundLayer;
+    [SerializeField] float _airborneMovementMultiplier = 0.25f;
+
+    [Header("Looking")]
+    [SerializeField] float _lookSensitivity = 1f;
 
     Vector2 _movementInput;
     Vector3 _velocity = new Vector3();
@@ -36,6 +40,10 @@ public class AnimationStateController : MonoBehaviour
         InputManager.Instance.AttackEvent += TryAttack;
         InputManager.Instance.SprintStartEvent += () => _isSprinting = true;
         InputManager.Instance.SprintReleasedEvent += () => _isSprinting = false;
+        
+        InputManager.Instance.LookEvent += ProcessLook;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 
@@ -58,14 +66,15 @@ public class AnimationStateController : MonoBehaviour
         _velocity.z = Mathf.Clamp(_velocity.z, -_currentMaxSpeed, _currentMaxSpeed);
         _velocity.x = Mathf.Clamp(_velocity.x, -_currentMaxSpeed, _currentMaxSpeed);
 
-        // -- Ground Movement -- 
         if (_isGrounded)
         {
+            // -- Ground Movement -- 
             _animator.SetFloat("VelocityZ", _velocity.z / _maxRunSpeed);    //has to be normalized btwn 0 and 1 for the animator to be accurate
             _animator.SetFloat("VelocityX", _velocity.x / _maxRunSpeed);
 
             _velocity.y = _rb.linearVelocity.y;
-            _rb.linearVelocity = _velocity;     //Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.fixedDeltaTime);
+            //_rb.linearVelocity = _velocity;     //Vector3.Lerp(_rb.linearVelocity, _velocity, 10f * Time.fixedDeltaTime);
+            _rb.AddForce(transform.forward * _velocity.z);
         } 
         else        // -- Air Movement -- 
         {
@@ -86,6 +95,14 @@ public class AnimationStateController : MonoBehaviour
     {
         if(_isGrounded)
             _animator.SetTrigger("Attack");
+    }
+
+    private void ProcessLook(Vector2 lookDelta)
+    {
+        //pitch
+        
+        //yaw
+        transform.Rotate(0f, lookDelta.x * _lookSensitivity, 0f);
     }
 
 }
