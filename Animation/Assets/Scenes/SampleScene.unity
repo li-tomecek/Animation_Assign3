@@ -301,26 +301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Erika_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 3473558285162241683, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 2224722379667499168, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3792196517883662018, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_Height
-      value: 1.8530562
+    - target: {fileID: 3534185204195113284, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3792196517883662018, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_Center.y
-      value: 0.9259381
-      objectReference: {fileID: 0}
-    - target: {fileID: 4028338540703361796, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177253586717569543, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_Data.m_Source
-      value: 
-      objectReference: {fileID: 1357134392}
     - target: {fileID: 4446728126158668050, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -361,52 +349,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _jumpForce
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _acceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _deceleration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _feetPosition
-      value: 
-      objectReference: {fileID: 364039300}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _groundCheckStart
-      value: 
-      objectReference: {fileID: 364039300}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _groundLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: groundCheckDistance
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388042900924525995, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: _groundCheckDistance
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6903446446336948480, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-      propertyPath: m_Name
-      value: GroundCheckStart
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
---- !u!4 &364039300 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4028338540703361796, guid: 6547a3deeafb55448bc37c86845949a8, type: 3}
-  m_PrefabInstance: {fileID: 340636315}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

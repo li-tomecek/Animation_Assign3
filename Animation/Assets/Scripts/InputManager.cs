@@ -32,5 +32,7 @@ public class InputManager : MonoBehaviour
         _gameControls.Player.Attack.performed += (InputAction.CallbackContext context) => AttackEvent?.Invoke();
         _gameControls.Player.Sprint.performed += (InputAction.CallbackContext context) => SprintStartEvent?.Invoke();
         _gameControls.Player.Sprint.canceled += (InputAction.CallbackContext context) => SprintReleasedEvent?.Invoke();
+
+        Debug.Log("game controls Set up");
     }
 }
