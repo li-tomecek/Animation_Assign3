@@ -1225,6 +1225,7 @@ Transform:
   - {fileID: 1606247261}
   - {fileID: 731604238}
   - {fileID: 543450653432573303}
+  - {fileID: 535334763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415557682
@@ -1487,7 +1488,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1095739279}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 412044355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2240,6 +2241,7 @@ GameObject:
   - component: {fileID: 1095739282}
   - component: {fileID: 1095739281}
   - component: {fileID: 1095739280}
+  - component: {fileID: 1095739283}
   m_Layer: 5
   m_Name: BlackFade
   m_TagString: Untagged
@@ -2254,7 +2256,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095739278}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2301,7 +2303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2326,6 +2328,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095739278}
   m_CullTransparentMesh: 1
+--- !u!114 &1095739283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095739278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2faefeae51f8b944c9b1458294c9f0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  fadeBackground: {fileID: 1095739281}
 --- !u!1001 &1104548658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10050,5 +10066,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 285738959}
   - {fileID: 412044355}
-  - {fileID: 535334763}
   - {fileID: 983443308}
