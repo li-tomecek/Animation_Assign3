@@ -403,7 +403,6 @@ GameObject:
   - component: {fileID: 8248238550935275000}
   - component: {fileID: 3792196517883662018}
   - component: {fileID: 763280909680837300}
-  - component: {fileID: 3534185204195113284}
   m_Layer: 0
   m_Name: Erika_Prefab
   m_TagString: Untagged
@@ -632,18 +631,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3534185204195113284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2224722379667499168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c5dd5acf6bc8d4083b3cec582ab0c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2232910065797060214
 GameObject:
   m_ObjectHideFlags: 0

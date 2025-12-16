@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
@@ -22,7 +23,7 @@ public class AnimationStateController : MonoBehaviour
     bool _isSprinting;
     float _currentMaxSpeed;
 
-    private void Awake()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
